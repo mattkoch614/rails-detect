@@ -1,7 +1,9 @@
 FROM ruby:2.7
 
 # Install nodejs
-RUN apt-get update -qq && apt-get install -y nodejs
+RUN apt-get update -qq 
+RUN curl -sL https://deb.nodesource.com/setup_14.x  | bash -
+RUN apt-get -y install nodejs
 
 # Add Yarn repository
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
