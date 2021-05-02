@@ -16,7 +16,7 @@
     <div class="min-h-screen">
         <nav class="flex px-4 border-b md:shadow-lg items-center relative bg-raveblue-500">
             <div class="text-lg text-white font-bold md:py-0 py-4">
-                medidata
+                <i class="fas fa-th"> </i> medidata
             </div>
             <ul class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0 text-white">
                 <li class="relative parent">
@@ -108,48 +108,71 @@
         </nav>
 
 
-        <div class="bg-gray-200">
-            <nav class="h-screen flex flex-col w-64 bg-gray-50">
+        <div class="flex flex-wrap bg-gray-100 w-full h-screen">
+            <div class="w-3/12 bg-white rounded p-3 shadow-lg">
 
-                <ul class="p-2 space-y-2 flex-1 overflow-auto" style="scrollbar-width: thin;">
+                <ul class="space-y-2 text-sm">
                     <li>
-                        <a href="#" class="flex space-x-2 items-center text-gray-600 p-2 bg-gray-200 rounded-lg">
-
-                            <i class="fas fa-tachometer-alt"></i><span class="text-gray-900">Overview</span>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline">
+                            <span class="text-gray-600">
+                                <i class="fas fa-tachometer-alt"> </i>
+                            </span>
+                            <span>Overview</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex space-x-2 items-center text-gray-600 p-2 hover:bg-gray-200 rounded-lg hover:text-gray-900">
-                            <i class="fas fa-chart-bar"></i><span>Error Plots</span>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                            <span class="text-gray-600">
+                                <i class="fas fa-chart-bar"> </i>
+                            </span>
+                            <span>Error Plots</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex space-x-2 items-center text-gray-600 p-2 hover:bg-gray-200 rounded-lg hover:text-gray-900">
-                            <i class="fas fa-chart-line"></i><span>Event Incidence Plot</span>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                            <span class="text-gray-600">
+                                <i class="fas fa-chart-line"> </i>
+                            </span>
+                            <span>Event Incidence Plot</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex space-x-2 items-center text-gray-600 p-2 hover:bg-gray-200 rounded-lg hover:text-gray-900">
-                            <i class="fas fa-chart-pie"></i><span>KRIs</span>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                            <span class="text-gray-600">
+                                <i class="fas fa-chart-pie"> </i>
+                            </span>
+                            <span>KRIs</span>
                         </a>
                     </li>
 
 
+                
                 </ul>
 
-                <div class="p-2 flex items-center justify-center border-t-2 border-gray-300 space-x-4">
+              
+                <div class="absolute -bottom-14 left-0 inline-block w-3/12 align-bottom">
+                    <div class="p-2 flex items-center justify-center border-t-2 border-b-2 border-gray-300 space-x-4">
+                        <a href="#" class="tracking-wide text-raveblue-600 uppercase">
+                            <i class="fas fa-chevron-left"></i> close 
+                        </a>
+    
+                    </div>
+                </div>
 
-                    <a href="#" class="tracking-wide text-raveblue-600 uppercase">
-                        <i class="fas fa-chevron-left"></i> close
-                    </a>
+            </div>
+            
+        
+            <div class="w-9/12">
+                <div class="p-4 text-gray-500">
+                    
+
+                    Content here...
+
 
                 </div>
-            </nav>
-
+            </div>
         </div>
+        
     </div>
 
 </body>
