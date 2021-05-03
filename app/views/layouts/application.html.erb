@@ -10,164 +10,185 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/e473a2bdbc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous"></script>
+
 </head>
-
-<body class="bg-gray-300">
-
-    <div class="min-h-screen">
-
-
-        <div class="w-full text-white bg-raveblue-500">
-            <div x-data="{ open: false }" class="flex flex-col px-4 mx-auto sm:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-              <div class="p-4 flex flex-row items-center justify-between">
-                <a href="#" class="text-lg font-semibold tracking-wider text-white rounded-lg focus:outline-none focus:shadow-outline">
-                    <i class="fas fa-th"> </i> medidata
-                </a>
-                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-                  <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                  </svg>
-                </button>
-              </div>
-              <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-
-                <div class="relative">
-                    <button class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                      <span>Help</span>
-                      <svg fill="currentColor" viewBox="0 0 20 20" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div> 
-                
-
-                <div class="relative">
-                    <button class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                      <span>Detect</span>
-                      <svg fill="currentColor" viewBox="0 0 20 20" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>  
-                
-                <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                  <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                    <span>John Doe</span>
-                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </button>
-                  <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-10">
-                    <div class="px-2 py-2 bg-white rounded-md shadow">
-                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
-                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
-                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+    <body class="bg-gray-300">
+        <div class="min-h-screen">
+            <!-- Header Bar -->
+            <div class="w-full text-white bg-raveblue-500">
+                <div x-data="{ open: false }"
+                    class="flex flex-col px-4 mx-auto sm:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                    <div class="p-4 flex flex-row items-center justify-between">
+                        <a href="#"
+                            class="text-lg font-semibold tracking-wider text-white rounded-lg focus:outline-none focus:shadow-outline">
+                            <i class="fas fa-th"> </i> medidata
+                        </a>
+                        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
                     </div>
-                  </div>
-                </div>    
-              </nav>
+                    <nav :class="{'flex': open, 'hidden': !open}"
+                        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+    
+                        <div class="relative">
+                            <button
+                                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                                <span>Help</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20"
+                                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <button
+                                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                                <span>Detect</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20"
+                                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button @click="open = !open"
+                                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                                <span>John Doe</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20"
+                                    :class="{'rotate-180': open, 'rotate-0': !open}"
+                                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95"
+                                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-10">
+                                <div class="px-2 py-2 bg-white rounded-md shadow">
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                        href="#">Link #1</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                        href="#">Link #2</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                        href="#">Link #3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
-          </div>
 
+            <!-- Main -->
+            <div class="flex flex-wrap bg-gray-100 w-full h-screen">
+
+                <!-- Sidebar -->
+                <div class="w-2/12 bg-white rounded shadow-lg">
+                    <ul class="text-sm mt-2">
+                        <li>
+                            <a href="#"
+                                class="border-l-2 h-12 border-raveblue-500 flex items-center space-x-3 text-gray-700 p-3 font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline">
+                                <span class="text-gray-600">
+                                    <i class="fas fa-tachometer-alt"> </i>
+                                </span>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                                <span class="text-gray-600">
+                                    <i class="fas fa-chart-bar"> </i>
+                                </span>
+                                <span>Error Plots</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                                <span class="text-gray-600">
+                                    <i class="fas fa-chart-line"> </i>
+                                </span>
+                                <span>Event Incidence Plot</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                                <span class="text-gray-600">
+                                    <i class="fas fa-chart-pie"> </i>
+                                </span>
+                                <span>KRIs</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="absolute -bottom-14 left-0 inline-block w-2/12 align-bottom">
+                        <div class="p-2 flex items-center justify-center border-t-2 border-b-2 border-gray-300 space-x-4">
+                            <a href="#" class="tracking-wide text-raveblue-600 uppercase">
+                                <i class="fas fa-chevron-left"></i> close
+                            </a>
     
-
-
-        <div class="flex flex-wrap bg-gray-100 w-full h-screen">
-            <div class="w-2/12 bg-white rounded shadow-lg">
-
-                <ul class="text-sm mt-2">
-                    <li>
-                        <a href="#" class="border-l-2 h-12 border-raveblue-500 flex items-center space-x-3 text-gray-700 p-3 font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline">
-                            <span class="text-gray-600">
-                                <i class="fas fa-tachometer-alt"> </i>
-                            </span>
-                            <span>Overview</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
-                            <span class="text-gray-600">
-                                <i class="fas fa-chart-bar"> </i>
-                            </span>
-                            <span>Error Plots</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
-                            <span class="text-gray-600">
-                                <i class="fas fa-chart-line"> </i>
-                            </span>
-                            <span>Event Incidence Plot</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
-                            <span class="text-gray-600">
-                                <i class="fas fa-chart-pie"> </i>
-                            </span>
-                            <span>KRIs</span>
-                        </a>
-                    </li>
-
-
-                
-                </ul>
-
-              
-                <div class="absolute -bottom-14 left-0 inline-block w-3/12 align-bottom">
-                    <div class="p-2 flex items-center justify-center border-t-2 border-b-2 border-gray-300 space-x-4">
-                        <a href="#" class="tracking-wide text-raveblue-600 uppercase">
-                            <i class="fas fa-chevron-left"></i> close 
-                        </a>
-    
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            
-        
-            <div class="w-10/12">
-                <div class="text-gray-500 h-16 p-4 shadow bg-white flex justify-between items-center">
-                  
-                    <span class="text-2xl">Overview</span>
-
-                    <div class="p-3 flex items-center justify-end">
-
-                        <div class="text-xs">Last Updated: 07:30 EDT Mon, Oct 6, 2020</div>
-                        
-                        <button class="px-4 ml-6 py-2 text-sm font-semibold border-2 border-raveblue-300 rounded hover:bg-gray-200 text-raveblue-600 focus:outline-none focus:ring-2 focus:ring-raveblue-300">Refresh Analytics</button>
-
-
-                    </div>
-
+                <!-- Viewport -->
+                <div class="w-10/12">
+                    <div class="text-gray-500 h-16 p-4 shadow bg-white flex justify-between items-center">
     
+                        <span class="text-2xl">Overview</span>
+    
+                        <div class="p-3 flex items-center justify-end">
+    
+                            <div class="text-xs">Last Updated: 07:30 EDT Mon, Oct 6, 2020</div>
+    
+                            <button
+                                class="px-4 ml-6 py-2 text-sm font-semibold border-2 border-raveblue-300 rounded hover:bg-gray-200 text-raveblue-600 focus:outline-none focus:ring-2 focus:ring-raveblue-300">Refresh
+                                Analytics</button>
+                        </div>
+                    </div>
+                    <div class="text-gray-500 h-12 mt-4 mx-4 shadow bg-white flex justify-between items-center">
+    
+                        <div class="text-xl m-3">Study</div>
+    
+                        <div class="p-3 flex items-center justify-end">
+                            <div>Grade:</div>&nbsp;
+                            <span
+                                class="rounded-full h-8 w-8 flex items-center justify-center bg-yellow-400 text-white font-semibold">C</span>
+                        </div>
+    
+                        <div class="p-3 flex items-center justify-end">
+                            <div>% Discrepancy:</div>&nbsp;
+                            <span class="text-black font-semibold">4.26</span>
+                        </div>
+    
+                        <div class="p-3 flex items-center justify-end">
+                            <div>Average Discrepancy:</div>&nbsp;
+                            <span class="text-black font-semibold">3.84</span>
+                        </div>
+                    </div>
+                    <div class="text-gray-500 mt-4 mx-4 shadow bg-white flex justify-between items-center">
+                        <div class="text-xl m-3 border-b border-gray-300 h-12 w-full">Risk Categories (5)</div>
+                    </div>
                 </div>
-
-
-                <div class="text-gray-500 h-12 mt-4 mx-4 shadow bg-white flex justify-between items-center">
-                
-                    <div class="text-xl m-3">Study</div>
-        
-                    <div class="p-3 flex items-center justify-end">
-                        <div>Grade:</div>&nbsp;
-                        <span class="rounded-full h-8 w-8 flex items-center justify-center bg-yellow-400 text-white font-semibold">C</span> 
-                    </div>
-
-                    <div class="p-3 flex items-center justify-end">
-                        <div>% Discrepancy:</div>&nbsp;
-                        <span class="text-black font-semibold">4.26</span> 
-                    </div>
-
-                    <div class="p-3 flex items-center justify-end">
-                        <div>Average Discrepancy:</div>&nbsp;
-                        <span class="text-black font-semibold">3.84</span> 
-                    </div>
-                
-                </div>
-
-                
-
-
             </div>
         </div>
-        
-    </div>
-
-</body>
+    </body>
 
 </html>
