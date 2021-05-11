@@ -17,8 +17,6 @@ docker-compose build
 
 docker-compose up -d
 
-docker-compose run --rm web bin/rails g scaffold user name:string
-
 docker-compose run --rm web bin/rails db:migrate
 ```
 
