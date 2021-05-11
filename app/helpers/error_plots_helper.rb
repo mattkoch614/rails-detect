@@ -1,0 +1,2 @@
+module ErrorPlotsHelper
+end
