@@ -111,7 +111,7 @@
 
 
                 </div>
-                <div class="col-start-7 col-span-4">
+                <div class="col-start-7 col-span-4 pt-4">
 
                   <nav :class="{'flex': open, 'hidden': !open}"
                        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
@@ -190,8 +190,8 @@
                 <div class="w-2/12 bg-white rounded shadow-lg">
                     <ul class="text-sm mt-2">
                         <li>
-                            <a href="/overview"
-                                class="border-l-2 h-12 border-raveblue-500 flex items-center space-x-3 text-gray-700 p-3 font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline">
+                          <a href="/overview"
+                                class="<%= params[:controller] == 'overview' ? 'bg-gray-200' : '' %> border-l-2 h-12 border-raveblue-500 flex items-center space-x-3 text-gray-700 p-3 font-medium hover:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
                                     <i class="fas fa-tachometer-alt"> </i>
                                 </span>
@@ -200,7 +200,7 @@
                         </li>
                         <li>
                             <a href="/error-plots"
-                                class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                                class="<%= params[:controller] == 'error_plots' ? 'bg-gray-200' : '' %> h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
                                     <i class="fas fa-chart-bar"> </i>
                                 </span>
@@ -209,7 +209,7 @@
                         </li>
                         <li>
                             <a href="/event-plots"
-                                class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                                class="<%= params[:controller] == 'event_plots' ? 'bg-gray-200' : '' %> h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
                                     <i class="fas fa-chart-line"> </i>
                                 </span>
@@ -218,7 +218,7 @@
                         </li>
                         <li>
                             <a href="/kri"
-                                class="h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                                class="<%= params[:controller] == 'kri' ? 'bg-gray-200' : '' %> h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
                                     <i class="fas fa-chart-pie"> </i>
                                 </span>
@@ -235,10 +235,12 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Viewport -->
                 <div class="w-10/12">
                   <%= yield %>
+                  <div class="p-4">
+                    <span class="italic text-sm text-gray-600">Medidata Detect is owned by Medidata Solutions, and this project is not affiliated with them in any way. This is a sample web app to experiment with Rails, Tailwind, and Docker.</span>
+                  </div>
                 </div>
             </div>
         </div>
