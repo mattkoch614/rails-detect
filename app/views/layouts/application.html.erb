@@ -21,7 +21,7 @@
 
 
               <div x-data="{ open: false }"
-                class="grid grid-cols-10 gap-1 md:px-6 lg:px-8 px-4 pb-2">
+                class="grid grid-cols-10 gap-1 px-2 pb-2">
                 <!-- Row 1 -->
                 <div class="col-start-1 col-span-10">
 
@@ -48,10 +48,10 @@
                   <nav :class="{'flex': open, 'hidden': !open}"
                        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row">
 
-                    <div class="relative">
+                    <div class="relative pt-4">
                       <button
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                        <span><i class="fas fa-home"> </i> DrugNameStudy-123</span>
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                        <span><i class="fas fa-home"> </i>  Study-123</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                           <path fill-rule="evenodd"
@@ -63,13 +63,15 @@
                   </nav>
                 </div>
                 <div class="col-start-3 col-span-4 text-left">
-                  <nav :class="{'flex': open, 'hidden': !open}"
-                       class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-start md:flex-row">
 
-                    <div class="relative">
+                  <div :class="{'flex': open, 'hidden': !open}"
+                        class="grid grid-cols-3 gap-1 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+
+                    <div class="flex flex-col">
+                      <span class="text-xs font-semibold uppercase px-4">studies</span>
                       <button
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                        <span>Studies</span>
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                        <span>Project_Name_21</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                           <path fill-rule="evenodd"
@@ -78,10 +80,11 @@
                         </svg>
                       </button>
                     </div>
-                    <div class="relative">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-semibold uppercase px-4">actions</span>
                       <button
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                        <span>Actions</span>
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                        <span>Medidata Detect</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                           <path fill-rule="evenodd"
@@ -90,10 +93,11 @@
                         </svg>
                       </button>
                     </div>
-                    <div class="relative">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-semibold uppercase px-4">elements</span>
                       <button
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
-                        <span>Environments</span>
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                        <span>Production</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                           <path fill-rule="evenodd"
@@ -102,7 +106,10 @@
                         </svg>
                       </button>
                     </div>
-                  </nav>
+                  </div>
+
+
+
                 </div>
                 <div class="col-start-7 col-span-4">
 
@@ -111,7 +118,7 @@
 
                     <div class="relative">
                       <button
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
                         <span>Help</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -123,7 +130,7 @@
                     </div>
                     <div class="relative">
                       <button
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
                         <span>Detect</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -135,7 +142,7 @@
                     </div>
                     <div @click.away="open = false" class="relative" x-data="{ open: false }">
                       <button @click="open = !open"
-                              class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
+                              class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-100 focus:text-gray-100 hover:bg-raveblue-600 focus:bg-raveblue-600 focus:outline-none focus:shadow-outline">
                         <span>John Doe</span>
                         <svg fill="currentColor" viewBox="0 0 20 20"
                              :class="{'rotate-180': open, 'rotate-0': !open}"
@@ -224,7 +231,7 @@
                             <a href="#" class="tracking-wide text-raveblue-600 uppercase">
                                 <i class="fas fa-chevron-left"></i> close
                             </a>
-    
+
                         </div>
                     </div>
                 </div>
