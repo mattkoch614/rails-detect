@@ -189,8 +189,8 @@
 
                 <!-- Sidebar -->
                 <div class="md:w-3/12 w-4/12 bg-white rounded shadow-lg">
-                    <ul class="text-sm mt-2">
-                        <li>
+                    <ul class="text-sm mt-2 flex flex-col h-full">
+                        <li class="">
                           <a href="/overview"
                                 class="<%= params[:controller] == 'overview' ? 'bg-gray-200' : '' %> border-l-2 h-12 border-raveblue-500 flex items-center space-x-3 text-gray-700 p-3 font-medium hover:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
@@ -199,7 +199,7 @@
                                 <span>Overview</span>
                             </a>
                         </li>
-                        <li>
+                       <li class="">
                             <a href="/error-plots"
                                 class="<%= params[:controller] == 'error_plots' ? 'bg-gray-200' : '' %> h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
@@ -208,7 +208,7 @@
                                 <span>Error Plots</span>
                             </a>
                         </li>
-                        <li>
+                       <li class="">
                             <a href="/event-plots"
                                 class="<%= params[:controller] == 'event_plots' ? 'bg-gray-200' : '' %> h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
@@ -217,7 +217,7 @@
                                 <span>Event Incidence Plot</span>
                             </a>
                         </li>
-                        <li>
+                      <li class="">
                             <a href="/kri"
                                 class="<%= params[:controller] == 'kri' ? 'bg-gray-200' : '' %> h-12 flex items-center space-x-3 text-gray-700 p-3 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
                                 <span class="text-gray-600">
@@ -226,15 +226,14 @@
                                 <span>KRIs</span>
                             </a>
                         </li>
-                    </ul>
-                    <div class="absolute -bottom-14 left-0 inline-block w-2/12 align-bottom">
+                      <li class="mt-auto">
                         <div class="p-2 flex items-center justify-center border-t-2 border-b-2 border-gray-300 space-x-4">
-                            <a href="#" class="tracking-wide text-raveblue-600 uppercase">
-                                <i class="fas fa-chevron-left"></i> close
-                            </a>
-
+                          <a href="#" class="tracking-wide text-raveblue-600 uppercase">
+                            <i class="fas fa-chevron-left"></i> close
+                          </a>
                         </div>
-                    </div>
+                      </li>
+                    </ul>
                 </div>
                 <!-- Viewport -->
                 <div class="md:w-9/12 w-8/12">
